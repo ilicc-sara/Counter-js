@@ -32,17 +32,25 @@ const incr = btnIncrEl.addEventListener("click", function () {
   document.querySelector(".digit").textContent = number;
   document.querySelector(".digit").value = number;
 
-  if (number > maxValue - 1) {
+  if (number >= maxValue) {
     document.querySelector("body").style.backgroundColor = "green";
+  } else if (number < maxValue) {
+    document.querySelector("body").style.backgroundColor = " rgb(35, 35, 35)";
   }
 });
+
+if (number === maxValue) {
+  btnIncrEl.removeEventListener();
+}
 
 const dcr = btnDcrEl.addEventListener("click", function () {
   --number;
   document.querySelector(".digit").textContent = number;
   document.querySelector(".digit").value = number;
 
-  if (number < minValue + 1) {
+  if (number <= minValue) {
     document.querySelector("body").style.backgroundColor = "red";
+  } else if (number > minValue) {
+    document.querySelector("body").style.backgroundColor = " rgb(35, 35, 35)";
   }
 });
