@@ -23,34 +23,53 @@ const maxValue = 10;
 const minValue = 0;
 
 const incr = btnIncrEl.addEventListener("click", function () {
-  // for (let i = 0; i <= maxValue; ++i) {
-  //   number = [i];
+  // for (let i = 1; i <= 10; i++) {
+  //   number =i;
+  //   console.log(i);
   // }
   // document.querySelector(".digit").textContent = number;
   // document.querySelector(".digit").value = number;
-  ++number;
-  document.querySelector(".digit").textContent = number;
-  document.querySelector(".digit").value = number;
+  if (number < 10) {
+    ++number;
+    document.querySelector(".digit").textContent = number;
+    document.querySelector(".digit").value = number;
+  }
 
   if (number >= maxValue) {
     document.querySelector("body").style.backgroundColor = "green";
+    // document.querySelector(".digit").textContent = maxValue;
+    // document.querySelector(".digit").value = maxValue;
   } else if (number < maxValue) {
     document.querySelector("body").style.backgroundColor = " rgb(35, 35, 35)";
   }
 });
 
-if (number === maxValue) {
-  btnIncrEl.removeEventListener();
-}
+// if (number === maxValue) {
+//   btnIncrEl.removeEventListener();
+// }
 
 const dcr = btnDcrEl.addEventListener("click", function () {
-  --number;
-  document.querySelector(".digit").textContent = number;
-  document.querySelector(".digit").value = number;
+  if (number > 0) {
+    --number;
+    document.querySelector(".digit").textContent = number;
+    document.querySelector(".digit").value = number;
+  }
 
   if (number <= minValue) {
     document.querySelector("body").style.backgroundColor = "red";
+    // document.querySelector(".digit").textContent = minValue;
+    // document.querySelector(".digit").value = minValue;
   } else if (number > minValue) {
     document.querySelector("body").style.backgroundColor = " rgb(35, 35, 35)";
   }
 });
+
+/*
+let btnBtn = 0;
+
+document.querySelector(".btn-btn").addEventListener("click", function () {
+  for (let i = 0; i <= 10; ++i) {
+    console.log(i);
+  }
+});
+*/

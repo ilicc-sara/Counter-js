@@ -23,10 +23,10 @@ h1 {
 
 button {
   width: 250px;
-  height: 50px;
+  height: 60px;
   background: none;
   border: 5px solid white;
   color: white;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
 }
