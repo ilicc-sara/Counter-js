@@ -19,20 +19,30 @@ console.log(btnIncrEl, btnDcrEl);
 
 let number = 0;
 let numberEl = document.querySelector(".digit").textContent;
-console.log(number);
+const maxValue = 10;
+const minValue = 0;
 
-btnIncrEl.addEventListener("click", function () {
-  ++number;
-  console.log(number);
-  document.querySelector(".digit").textContent = number;
-
-  // if (number > 10) {
-  //   btnIncrEl.removeEventListener();
+const incr = btnIncrEl.addEventListener("click", function () {
+  // for (let i = 0; i <= maxValue; ++i) {
+  //   number = [i];
   // }
+  // document.querySelector(".digit").textContent = number;
+  // document.querySelector(".digit").value = number;
+  ++number;
+  document.querySelector(".digit").textContent = number;
+  document.querySelector(".digit").value = number;
+
+  if (number > maxValue - 1) {
+    document.querySelector("body").style.backgroundColor = "green";
+  }
 });
 
-btnDcrEl.addEventListener("click", function () {
+const dcr = btnDcrEl.addEventListener("click", function () {
   --number;
-  console.log(number);
   document.querySelector(".digit").textContent = number;
+  document.querySelector(".digit").value = number;
+
+  if (number < minValue + 1) {
+    document.querySelector("body").style.backgroundColor = "red";
+  }
 });
