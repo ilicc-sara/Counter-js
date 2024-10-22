@@ -22,7 +22,7 @@ let numberEl = document.querySelector(".digit").textContent;
 const maxValue = 10;
 const minValue = 0;
 
-const incr = btnIncrEl.addEventListener("click", function () {
+const incrCount = function () {
   // for (let i = 1; i <= 10; i++) {
   //   number =i;
   //   console.log(i);
@@ -42,13 +42,15 @@ const incr = btnIncrEl.addEventListener("click", function () {
   } else if (number < maxValue) {
     document.querySelector("body").style.backgroundColor = " rgb(35, 35, 35)";
   }
-});
+};
+
+btnIncrEl.addEventListener("click", incrCount);
 
 // if (number === maxValue) {
 //   btnIncrEl.removeEventListener();
 // }
 
-const dcr = btnDcrEl.addEventListener("click", function () {
+btnDcrEl.addEventListener("click", function () {
   if (number > 0) {
     --number;
     document.querySelector(".digit").textContent = number;
